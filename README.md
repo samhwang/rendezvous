@@ -1,5 +1,9 @@
 # Rendezvous
 
+## What this is
+
+Doing some thought excercises from the newsletter [Rendezvous with Cassidoo](https://cassidoo.co/newsletter/).
+
 ## Available scripts
 
 ```shell
