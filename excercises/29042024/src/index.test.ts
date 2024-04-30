@@ -1,12 +1,16 @@
-import { describe, expect, it, vi } from 'vitest';
-import { sayHello } from './index';
+import { describe, expect, it } from 'vitest';
+import { translateRightShift } from './index';
 
-const consoleSpy = vi.spyOn(console, 'log');
-consoleSpy.mockImplementation(() => {});
+describe('translate right shift', () => {
+  it('should give lol wowie', () => {
+    const input = ';p; epeor';
+    const expected = 'lol wowie';
+    expect(translateRightShift(input)).toEqual(expected);
+  });
 
-describe('say hello', () => {
-  it('should say hello', () => {
-    sayHello();
-    expect(consoleSpy).toBeCalled();
+  it('should give who am i', () => {
+    const input = 'ejp s, o';
+    const expected = 'who am i';
+    expect(translateRightShift(input)).toEqual(expected);
   });
 });
