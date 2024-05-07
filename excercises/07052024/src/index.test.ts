@@ -6,7 +6,8 @@ describe('Word Wrapping', () => {
     const input = 'Hello, world! I am hungry.';
     const length = 10;
     const expected = 'Hello, wo-\nrld! I am\nhungry.';
-    expect(wrap(input, length)).toBe(expected);
+    const output = wrap(input, length);
+    expect(output).toBe(expected);
   });
 
   it('should not make new lines start with non-alphanumeric char', () => {});
