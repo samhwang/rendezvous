@@ -10,5 +10,11 @@ describe('Word Wrapping', () => {
     expect(output).toBe(expected);
   });
 
-  it('should not make new lines start with non-alphanumeric char', () => {});
+  it('should not make new lines start with non-alphanumeric char', () => {
+    const input = 'Hello, world! I am hungry.';
+    const length = 5;
+    const expected = 'Hell-\no, w-\norld!\nI am\nhung-\nry.';
+    const output = wrap(input, length);
+    expect(output).toBe(expected);
+  });
 });
