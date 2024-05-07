@@ -15,3 +15,10 @@ let length = 10
  rld! I am
  hungry.`
  ```
+
+ ## Commands
+
+ ```shell
+ pnpm run test
+ npx tsx ./bin/index.ts
+ ```
