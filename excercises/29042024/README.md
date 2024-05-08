@@ -14,7 +14,7 @@ Example:
 "who am i"
 ```
 
-## Assumption
+## Assumption (if any)
 
 - The input string will only contain lowercase letters, spaces, and punctuation.
 - When shifted all the way left, it will stop at the first left key on each line and not wrap around to the previous line. i.e.:
@@ -27,5 +27,5 @@ Example:
 
 ```shell
 pnpm run test
-npx tsx ./bin/index.ts
+npx tsx ./bin
 ```
