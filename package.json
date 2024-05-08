@@ -19,12 +19,14 @@
     "lint:fix": "biome check --apply .",
     "lint:fix:unsafe": "biome check --apply-unsafe .",
     "format": "biome format --write .",
-    "ci": "biome ci ."
+    "ci": "biome ci .",
+    "scaffold": "tsx ./scaffold"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "^1.5.2",
+    "commander": "^12.0.0",
     "esbuild": "^0.20.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",

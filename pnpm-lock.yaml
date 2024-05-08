@@ -17,6 +17,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^1.5.2
         version: 1.5.2(vitest@1.5.2(@types/node@20.12.7))
+      commander:
+        specifier: ^12.0.0
+        version: 12.0.0
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
@@ -622,6 +625,10 @@ packages:
   commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
+
+  commander@12.0.0:
+    resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
+    engines: {node: '>=18'}
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -1573,6 +1580,8 @@ snapshots:
   colorette@2.0.20: {}
 
   commander@11.1.0: {}
+
+  commander@12.0.0: {}
 
   concat-map@0.0.1: {}
 
