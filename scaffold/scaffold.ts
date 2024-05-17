@@ -63,8 +63,8 @@ export function isValidDate(dateInput: string): void {
 }
 
 export function scaffoldFolder(dateInput: string): void {
-  const folderPath = path.join(__dirname, '..', '..', 'excercises', dateInput);
-  const templatePath = path.join(__dirname, '..', 'template');
+  const folderPath = path.join(__dirname, '..', 'excercises', dateInput);
+  const templatePath = path.join(__dirname, 'template');
   const folderExists = fs.existsSync(folderPath);
   if (!folderExists) {
     fs.mkdirSync(folderPath, { recursive: true });
