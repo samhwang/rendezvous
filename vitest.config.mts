@@ -8,7 +8,7 @@ export default defineConfig({
       enabled: true,
       provider: 'v8',
       clean: true,
-      exclude: [...coverageConfigDefaults.exclude, 'excercises/**/bin', 'scaffold/template', 'scaffold/index.ts'],
+      exclude: [...coverageConfigDefaults.exclude, 'scaffold/template', 'scaffold/index.ts'],
     },
   },
 });

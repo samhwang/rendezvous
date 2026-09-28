@@ -12,9 +12,3 @@ pnpm run test      # run tests
 pnpm run lint      # run linter and formatter checks
 pnpm run typecheck # run TypeScript type checking
 ```
-
-To run an individual exercise directly:
-
-```shell
-oxnode excercises/<date>/bin/index.ts
-```

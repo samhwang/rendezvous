@@ -23,5 +23,4 @@ Example:
 
 ```shell
 pnpm run test
-npx oxnode ./bin
 ```
