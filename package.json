@@ -27,12 +27,12 @@
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "^1.5.2",
     "commander": "^12.0.0",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.28.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "rimraf": "^5.0.5",
     "tsx": "^4.7.3",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.2"
+    "vitest": "^4.1.11"
   }
 }
