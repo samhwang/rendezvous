@@ -26,9 +26,8 @@ describe('Is Valid Date', () => {
     expect(() => isValidDate(input)).toThrow();
   });
 
-  it('should throw error when month > 12', () => {
-    const input = '01132023';
-    expect(() => isValidDate(input)).toThrow();
+  it.each<number>([13, 0])('Should throw given invalid month %d', (input) => {
+    expect(() => isValidDate(`01${input}2023`)).toThrow();
   });
 
   it.each<string>([
