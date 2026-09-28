@@ -1,4 +1,5 @@
 import { program } from 'commander';
+
 import { isValidDate, scaffoldFolder } from './scaffold';
 
 program

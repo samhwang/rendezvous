@@ -6,7 +6,7 @@
 
 Example:
 
-```js
+```text
 > maxProduct([2, 4, 1, 3, -5, 6])
 > 72 // 4*3*6
 ```
@@ -15,5 +15,5 @@ Example:
 
 ```shell
 pnpm run test
-npx tsx ./bin
+npx oxnode ./bin
 ```

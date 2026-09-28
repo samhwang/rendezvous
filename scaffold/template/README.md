@@ -6,7 +6,7 @@
 
 Example:
 
-```
+```text
 > {{EXAMPLE}}
 {{EXAMPLE_OUTPUT}}
 ```
@@ -19,5 +19,5 @@ Example:
 
 ```shell
 pnpm run test
-npx tsx ./bin
+npx oxnode ./bin
 ```

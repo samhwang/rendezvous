@@ -6,21 +6,20 @@
 
 Example:
 
-```js
-let string = "Hello, world! I am hungry."
-let length = 10
-
-> wrap(string, length)
-`Hello, wo-
+```text
+let string = 'Hello, world! I am hungry.';
+let length =
+  10 >
+  wrap(string, length)`Hello, wo-
  rld! I am
- hungry.`
- ```
+ hungry.`;
+```
 
- ## Assumption (if any)
+## Assumption (if any)
 
- ## Commands
+## Commands
 
- ```shell
- pnpm run test
- npx tsx ./bin
- ```
+```shell
+pnpm run test
+npx oxnode ./bin
+```

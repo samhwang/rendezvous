@@ -1,38 +1,37 @@
 {
-  "name": "@samhwang/ts-starter-template",
+  "name": "@samhwang/rendezvous",
   "version": "1.0.0",
-  "description": "TypeScript Starter Template",
-  "engines": {
-    "node": "^20.0.0",
-    "pnpm": "^9.0.0"
-  },
-  "packageManager": "pnpm@9.0.6",
+  "description": "Weekly TypeScript exercises from Rendezvous with Cassidoo",
+  "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "tsx bin/index.ts",
-    "pretest": "rimraf coverage",
+    "scaffold": "oxnode ./scaffold",
     "typecheck": "tsc",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:CI": "pnpm run test && pnpm run typecheck",
-    "lint": "biome check .",
-    "lint:fix": "biome check --apply .",
-    "lint:fix:unsafe": "biome check --apply-unsafe .",
-    "format": "biome format --write .",
-    "ci": "biome ci .",
-    "scaffold": "tsx ./scaffold"
+    "test:coverage": "vitest run --coverage",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt --write .",
+    "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write .",
+    "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.1",
-    "@types/node": "^20.12.7",
-    "@vitest/coverage-v8": "^1.5.2",
-    "commander": "^12.0.0",
-    "esbuild": "^0.20.2",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "rimraf": "^5.0.5",
-    "tsx": "^4.7.3",
-    "typescript": "^5.4.5",
-    "vitest": "^1.5.2"
-  }
+    "@oxc-node/cli": "^0.1.3",
+    "@oxc-node/core": "^0.1.3",
+    "@types/node": "^26.6.3",
+    "@vitest/coverage-v8": "^5.0.2",
+    "commander": "^15.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
+    "oxlint-tsgolint": "^7.0.2003",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^12.0.0"
+  },
+  "packageManager": "pnpm@12.6.0"
 }

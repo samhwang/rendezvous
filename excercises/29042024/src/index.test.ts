@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { translateRightShift } from './index';
 
 describe('translate right shift', () => {

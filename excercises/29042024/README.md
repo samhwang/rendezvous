@@ -6,7 +6,7 @@
 
 Example:
 
-```
+```text
 > translateRightShift(';p; epeor')
 "lol wowie"
 
@@ -27,5 +27,5 @@ Example:
 
 ```shell
 pnpm run test
-npx tsx ./bin
+npx oxnode ./bin
 ```

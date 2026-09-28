@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { fixInvertedPunc } from './index';
 
 describe('Fix inverted Punctuations', () => {

@@ -6,7 +6,7 @@
 
 Example:
 
-```js
+```text
 > fixInvertedPunc("Feliz cumpleaños!")
 > "¡Feliz cumpleaños!"
 
@@ -22,5 +22,5 @@ Example:
 
 ```shell
 pnpm run test
-npx tsx ./bin
+npx oxnode ./bin
 ```

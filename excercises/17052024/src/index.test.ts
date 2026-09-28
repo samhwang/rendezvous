@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { maxProduct } from './index';
 
 describe('Max Product function', () => {
