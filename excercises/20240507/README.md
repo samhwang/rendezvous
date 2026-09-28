@@ -8,11 +8,11 @@ Example:
 
 ```text
 let string = 'Hello, world! I am hungry.';
-let length =
-  10 >
-  wrap(string, length)`Hello, wo-
- rld! I am
- hungry.`;
+let length = 10;
+> wrap(string, length)
+`Hello, wo-
+rld! I am
+hungry.`
 ```
 
 ## Assumption (if any)

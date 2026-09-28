@@ -10,21 +10,27 @@ function isLeapYear(year: number): boolean {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
-export function isValidDate(dateInput: string): void {
+export interface ParsedDate {
+  day: string;
+  month: string;
+  year: string;
+}
+
+export function parseDate(dateInput: string): ParsedDate {
   const match = dateInput.match(dateFormatRegex);
   if (!match) {
-    throw new Error(`Invalid date format. Correct format is ddmmyyyy. Input: ${dateInput}`);
+    throw new Error(`Invalid date format. Correct format is yyyymmdd. Input: ${dateInput}`);
   }
-  const year = dateInput.slice(4);
+  const year = dateInput.slice(0, 4);
   const leapYear = isLeapYear(Number.parseInt(year));
 
-  const month = dateInput.slice(2, 4);
+  const month = dateInput.slice(4, 6);
   const monthAsNumber = Number.parseInt(month);
   if (monthAsNumber > 12) {
     throw new Error(`Invalid month. Month should be less than 12. Input: ${month}`);
   }
 
-  const day = dateInput.slice(0, 2);
+  const day = dateInput.slice(6, 8);
   const dayAsNumber = Number.parseInt(day);
   switch (monthAsNumber) {
     case 1:
@@ -62,15 +68,23 @@ export function isValidDate(dateInput: string): void {
       throw new Error(`Invalid month. Input: ${month}`);
   }
 
-  return;
+  return { day, month, year };
 }
 
-export function scaffoldFolder(dateInput: string): void {
-  const folderPath = path.join(__dirname, '..', 'excercises', dateInput);
+export function scaffoldFolder(parsedDate: ParsedDate): void {
+  const day = parsedDate.day.padStart(2, '0');
+  const month = parsedDate.month.padStart(2, '0');
+  const year = parsedDate.year.padStart(4, '0');
+
+  const folderPath = path.join(__dirname, '..', 'excercises', `${year}${month}${day}`);
   const templatePath = path.join(__dirname, 'template');
   const folderExists = fs.existsSync(folderPath);
   if (!folderExists) {
     fs.mkdirSync(folderPath, { recursive: true });
   }
   fs.cpSync(templatePath, folderPath, { recursive: true });
+
+  const readmePath = path.join(folderPath, 'README.md');
+  const readmeContent = fs.readFileSync(readmePath, 'utf8');
+  fs.writeFileSync(readmePath, readmeContent.replace('{{DATE}}', `${day}/${month}/${year}`));
 }

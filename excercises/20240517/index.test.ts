@@ -6,12 +6,12 @@ describe('Max Product function', () => {
   describe('Invalid inputs', () => {
     it('Should reject input that has less than 3 numbers', () => {
       const input = [1, 2];
-      expect(() => maxProduct(input)).toThrowError('Input should have at least 3 numbers');
+      expect(() => maxProduct(input)).toThrow('Input should have at least 3 numbers');
     });
 
     it('Should reject if it has non-integer values', () => {
       const input = [1, 2, 3.5, 'aaa'];
-      expect(() => maxProduct(input)).toThrowError('Input should have only integers');
+      expect(() => maxProduct(input)).toThrow('Input should have only integers');
     });
   });
 
