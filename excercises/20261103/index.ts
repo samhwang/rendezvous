@@ -1,10 +1,23 @@
 // assuming input will always be hh:mm.
-function parseHour(input: string): { hour: number; minute: number } {
+
+type HHMM = {
+  hour: number;
+  minute: number;
+};
+
+function parseHour(input: string): HHMM {
   const [hour, minute] = input.split(':');
   return {
     hour: Number.parseInt(hour, 10),
     minute: Number.parseInt(minute, 10),
   };
+}
+
+function parseHHMMintoDate({ hour, minute }: HHMM, pastDaylightSaving: boolean = false): Date {
+  const date = new Date();
+  date.setHours(pastDaylightSaving ? hour + 1 : hour);
+  date.setMinutes(minute);
+  return date;
 }
 
 export function elapsedMinutes(input: string[]): number {
@@ -13,14 +26,11 @@ export function elapsedMinutes(input: string[]): number {
 
   // Setup first record
   const firstHourMin = parseHour(input[0]);
-  const firstTime = new Date();
-  firstTime.setHours(firstHourMin.hour);
-  firstTime.setMinutes(firstHourMin.minute);
 
   let pastHourMin = firstHourMin;
-  let pastTimeValue = firstTime.valueOf();
 
   for (let i = 1; i < input.length; i++) {
+    const pastTime = parseHHMMintoDate(pastHourMin, pastDaylightSaving);
     // parse current time
     const currentHourMin = parseHour(input[i]);
 
@@ -29,12 +39,9 @@ export function elapsedMinutes(input: string[]): number {
       pastDaylightSaving = currentHourMin.hour < pastHourMin.hour || (currentHourMin.hour === pastHourMin.hour && currentHourMin.minute < pastHourMin.minute);
     }
 
-    const currentTime = new Date();
-    currentTime.setHours(pastDaylightSaving ? currentHourMin.hour + 1 : currentHourMin.hour);
-    currentTime.setMinutes(currentHourMin.minute);
-    const currentTimeValue = currentTime.valueOf();
+    const currentTime = parseHHMMintoDate(currentHourMin, pastDaylightSaving);
 
-    const duration = currentTimeValue - pastTimeValue;
+    const duration = currentTime.valueOf() - pastTime.valueOf();
     total += Math.round(duration / 1000 / 60);
 
     // last record, don't bother resetting
@@ -44,7 +51,6 @@ export function elapsedMinutes(input: string[]): number {
 
     // reset the past record for next calculation
     pastHourMin = currentHourMin;
-    pastTimeValue = currentTimeValue;
   }
   return total;
 }
