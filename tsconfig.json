@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
-    "types": ["vitest"],
+    "types": ["vitest", "vitest/importMeta"],
     "useDefineForClassFields": true,
     "allowJs": false,
     "skipLibCheck": true,
