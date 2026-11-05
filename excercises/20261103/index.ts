@@ -22,14 +22,10 @@ function parseHHMMintoDate({ hour, minute }: HHMM, pastDaylightSaving: boolean =
 
 export function elapsedMinutes(input: string[]): number {
   let pastDaylightSaving = false;
-  let pastHourMin: HHMM = { hour: 0, minute: 0 };
+  let pastHourMin = parseHour(input[0]);
 
-  return input.reduce((accumulator, timeInput, index) => {
+  return input.slice(1).reduce((accumulator, timeInput) => {
     const currentHourMin = parseHour(timeInput);
-    if (index === 0) {
-      pastHourMin = currentHourMin;
-      return accumulator;
-    }
 
     const pastTime = parseHHMMintoDate(pastHourMin, pastDaylightSaving);
 
@@ -39,8 +35,9 @@ export function elapsedMinutes(input: string[]): number {
 
     const currentTime = parseHHMMintoDate(currentHourMin, pastDaylightSaving);
     const duration = currentTime.valueOf() - pastTime.valueOf();
+    const durationMinutes = Math.round(duration / 1000 / 60);
 
     pastHourMin = currentHourMin;
-    return accumulator + Math.round(duration / 1000 / 60);
+    return accumulator + durationMinutes;
   }, 0);
 }
