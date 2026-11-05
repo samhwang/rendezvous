@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { parseDate, scaffoldFolder } from '../src/scaffold/';
 
 const [, , yyyymmdd] = process.argv;
