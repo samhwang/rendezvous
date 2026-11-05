@@ -41,3 +41,16 @@ export function elapsedMinutes(input: string[]): number {
     return accumulator + durationMinutes;
   }, 0);
 }
+
+if (import.meta.vitest) {
+  const { describe, it, expect } = import.meta.vitest;
+
+  describe('Elapsed minute tests', () => {
+    it.each<[string[], number]>([
+      [['00:50', '01:10', '01:50', '01:10', '02:10'], 140],
+      [['01:55', '01:05', '01:25', '01:40'], 45],
+    ])('Should calculate the elapsed minutes correctly', (input, output) => {
+      expect(elapsedMinutes(input)).toEqual(output);
+    });
+  });
+}

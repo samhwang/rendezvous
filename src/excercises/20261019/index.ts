@@ -21,3 +21,18 @@ export function ghostwriter(input: string): string {
     return `${finalText}${currentChar}`;
   }, '');
 }
+
+if (import.meta.vitest) {
+  const { describe, it, expect } = import.meta.vitest;
+
+  describe('Ghostwriter', () => {
+    it.each<[string, string]>([
+      ['ghost', 'ghost'],
+      ['a#~b', 'b'],
+      ['ab~c#', 'abb'],
+      ['BBB##O~', 'BOO'],
+    ])('Should return correct ghost writer output', (input, output) => {
+      expect(ghostwriter(input)).toEqual(output);
+    });
+  });
+}

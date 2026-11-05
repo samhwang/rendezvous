@@ -34,3 +34,21 @@ export function fixInvertedPunc(input: string): string {
 
   return words.join(' ');
 }
+
+if (import.meta.vitest) {
+  const { describe, expect, it } = import.meta.vitest;
+
+  describe('Fix inverted Punctuations', () => {
+    it('Should output correctly for "Feliz cumpleaños!"', () => {
+      expect(fixInvertedPunc('Feliz cumpleaños!')).toBe('¡Feliz cumpleaños!');
+    });
+
+    it('Should output correctly for "Ella ya se graduó de la universidad? ¡No!"', () => {
+      expect(fixInvertedPunc('Ella ya se graduó de la universidad? ¡No!')).toBe('¿Ella ya se graduó de la universidad? ¡No!');
+    });
+
+    it('Should output correctly for "Test string"', () => {
+      expect(fixInvertedPunc('Test string')).toBe('Test string');
+    });
+  });
+}

@@ -54,3 +54,21 @@ export function translateRightShift(input: string): string {
     .map((char) => (char === ' ' ? char : LEFT_SHIFT_CHARS[char]))
     .join('');
 }
+
+if (import.meta.vitest) {
+  const { describe, expect, it } = import.meta.vitest;
+
+  describe('translate right shift', () => {
+    it('should give lol wowie', () => {
+      const input = ';p; epeor';
+      const expected = 'lol wowie';
+      expect(translateRightShift(input)).toEqual(expected);
+    });
+
+    it('should give who am i', () => {
+      const input = 'ejp s, o';
+      const expected = 'who am i';
+      expect(translateRightShift(input)).toEqual(expected);
+    });
+  });
+}
