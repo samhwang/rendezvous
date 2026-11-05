@@ -8,7 +8,7 @@ export default defineConfig({
       enabled: true,
       provider: 'v8',
       clean: true,
-      exclude: [...coverageConfigDefaults.exclude, 'src/scaffold/template', 'src/scaffold/index.ts'],
+      exclude: [...coverageConfigDefaults.exclude, 'src/scaffold/template'],
     },
   },
 });
