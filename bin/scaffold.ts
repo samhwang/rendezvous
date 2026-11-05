@@ -1,4 +1,4 @@
-import { parseDate, scaffoldFolder } from './scaffold';
+import { parseDate, scaffoldFolder } from '../src/scaffold/';
 
 const [, , yyyymmdd] = process.argv;
 
@@ -9,7 +9,7 @@ if (!yyyymmdd) {
 
 try {
   const parsedDate = parseDate(yyyymmdd);
-  console.log(`Scaffolding template to excercises/${yyyymmdd}`);
+  console.log(`Scaffolding template to src/excercises/${yyyymmdd}`);
   scaffoldFolder(parsedDate);
   console.log('Done!');
 } catch (error) {

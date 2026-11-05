@@ -16,5 +16,5 @@
     "isolatedModules": false,
     "noEmit": true
   },
-  "include": ["excercises", "scaffold", "vitest.config.mts"]
+  "include": ["src", "bin", "vitest.config.mts"]
 }

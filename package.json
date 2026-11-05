@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "scaffold": "oxnode ./scaffold",
+    "scaffold": "oxnode ./bin/scaffold.ts",
     "typecheck": "tsc",
     "test": "vitest run",
     "test:watch": "vitest watch",

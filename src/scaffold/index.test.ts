@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { parseDate } from './scaffold';
+import { parseDate } from '.';
 
 describe('Parse Date', () => {
   it.each<string>([

@@ -10,5 +10,5 @@ export default defineConfig({
   jsxSingleQuote: false,
   arrowParens: 'always',
   sortImports: true,
-  ignorePatterns: ['scaffold/template/*'],
+  ignorePatterns: ['src/scaffold/template/*'],
 });
