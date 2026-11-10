@@ -13,7 +13,7 @@ Example:
 
 ## Assumption (if any)
 
-{{ASSUMPTION}
+{{ASSUMPTION}}
 
 ## Commands
 
